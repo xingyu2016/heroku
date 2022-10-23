@@ -1,9 +1,4 @@
-### 关注甬哥项目https://gitlab.com/rwkgyg/
 
-### 使用Github进行代码托管并连接heroku [gitlab项目通过https方式上传到github项目的流程图](https://ygkkk.blogspot.com/2022/06/gitlabhttpsgithub.html)
-
-
-### workers反代与pages反代及自定义域，配置文件信息等相关操作拓展教程，请关注：[博客视频教程](https://ygkkk.blogspot.com/2022/05/heroku-cloudflare-workers-pages.html)
 
 
 ### CloudFlare Workers反代代码（可分别用两个账号的应用程序名（`path路径`、`协议`、`UUID`保持一致），单双号天分别执行，那一个月就有550+550小时（每个账号一个月免费使用550小时））
@@ -135,9 +130,57 @@ addEventListener(
 ```
 </details>
 
-### 感谢以下项目所提供的参考
+三、客户端配置如下
 
-https://github.com/mixool/xrayku  （已删库）
+IOS端小火箭就可以通吃，安卓端推荐V2rayNG或搭配Kitsunebi
 
-https://github.com/Cptmacmillan2022007/IX-X2VW
+协议：(vless/vmess/trojan)-ws
+
+地址：app.heroku.com（自选IP/域名）
+
+端口：443
+
+用户ID/密码：自定义UUID
+
+传输协议：ws
+
+伪装host：app.heroku.com（workers或pages反代/自定义域）
+
+路径path：/自定义UUID-协议开头两小写字母
+
+传输安全：tls
+
+SNI：app.heroku.com（workers或pages反代/自定义域）
+
+其他设置保持默认即可！
+
+
+
+shadowsocks-ws与socks5-ws推荐用Kitsunebi，配置简单，不需要plugin插件
+
+协议：(shadowsocks/socks5)-ws
+
+地址：app.heroku.com（自选IP/域名）
+
+端口：443
+
+shadowsocks密码：自定义UUID
+
+shadowsocks加密方式：chacha20-ietf-poly1305(默认)
+
+socks5用户名：空
+
+socks5密码：空
+
+传输协议：ws
+
+伪装host：app.heroku.com（workers或pages反代/自定义域）
+
+路径path：/自定义UUID-协议开头两小写字母
+
+传输安全：tls
+
+SNI(证书域名)：app.heroku.com（workers或pages反代/自定义域）
+
+其他设置保持默认即可！
 
