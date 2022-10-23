@@ -2,7 +2,7 @@
 @websockets-vl {
         header Connection *Upgrade*
         header Upgrade websocket
-        path /{$UUID}-vl*
+        path /6bd40e*
 }
 handle @websockets-vl {
         reverse_proxy * localhost:61079
@@ -10,7 +10,7 @@ handle @websockets-vl {
 @websockets-vm {
         header Connection *Upgrade*
         header Upgrade websocket
-        path /{$UUID}-vm*
+        path /6bd40e*
 }
 handle @websockets-vm {
         reverse_proxy * localhost:61080
@@ -18,7 +18,7 @@ handle @websockets-vm {
 @websockets-sh {
         header Connection *Upgrade*
         header Upgrade websocket
-        path /{$UUID}-sh*
+        path /6bd40e*
 }
 handle @websockets-sh {
         reverse_proxy * localhost:61081
@@ -26,7 +26,7 @@ handle @websockets-sh {
 @websockets-tr {
         header Connection *Upgrade*
         header Upgrade websocket
-        path /{$UUID}-tr*
+        path /6bd40e*
 }
 handle @websockets-tr {
         reverse_proxy * localhost:61082
@@ -34,7 +34,7 @@ handle @websockets-tr {
 @websockets-so {
         header Connection *Upgrade*
         header Upgrade websocket
-        path /{$UUID}-so*
+        path /6bd40e*
 }
 handle @websockets-so {
         reverse_proxy * localhost:52123
